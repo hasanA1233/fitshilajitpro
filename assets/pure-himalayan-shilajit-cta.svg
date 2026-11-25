@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241D14"/>
+      <stop offset="1" stop-color="#13100D"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#E2B95B" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#E2B95B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="resin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4A341C"/>
+      <stop offset="1" stop-color="#2A1C10"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#sky)"/>
+  <circle cx="900" cy="150" r="70" fill="#E2B95B" opacity=".18"/>
+  <circle cx="900" cy="150" r="38" fill="#F3D58C" opacity=".35"/>
+  <!-- far range -->
+  <path d="M0 330 L120 230 L210 290 L330 170 L450 280 L560 200 L680 300 L800 190 L930 290 L1050 210 L1200 300 L1200 500 L0 500Z" fill="#2A241D"/>
+  <path d="M330 170 L370 205 L350 210 L330 195 L305 215 L295 200Z M800 190 L840 226 L818 228 L800 214 L778 232 L770 216Z" fill="#C9BFAF" opacity=".55"/>
+  <!-- near range -->
+  <path d="M0 400 L150 300 L260 360 L400 260 L520 350 L640 290 L760 370 L900 280 L1040 360 L1200 310 L1200 500 L0 500Z" fill="#1F1A14"/>
+  <path d="M0 400 L150 300 L260 360 L400 260 L520 350 L640 290 L760 370 L900 280 L1040 360 L1200 310" fill="none" stroke="#4A3D28" stroke-width="3"/>
+  <rect x="0" y="430" width="1200" height="70" fill="#18140F"/>
+  <!-- glow behind jar -->
+  <ellipse cx="600" cy="300" rx="230" ry="190" fill="url(#glow)"/>
+  <!-- jar -->
+  <ellipse cx="600" cy="452" rx="150" ry="16" fill="#000" opacity=".45"/>
+  <rect x="510" y="110" width="180" height="54" rx="14" fill="#2A241D" stroke="#E2B95B" stroke-width="3"/>
+  <rect x="524" y="122" width="152" height="6" rx="3" fill="#4A3D28"/>
+  <rect x="484" y="168" width="232" height="280" rx="40" fill="#1A1511" stroke="#E2B95B" stroke-width="3"/>
+  <path d="M500 340c34-22 70 14 106-4s64-22 94-6v74a24 24 0 0 1-24 24H524a24 24 0 0 1-24-24z" fill="url(#resin)"/>
+  <path d="M500 352c34-22 70 14 106-4s64-22 94-6" fill="none" stroke="#7A5A33" stroke-width="3"/>
+  <!-- label: mountains icon -->
+  <rect x="526" y="208" width="148" height="100" rx="14" fill="#241D14" stroke="#4A3D28" stroke-width="2"/>
+  <path d="M546 288 L578 246 L594 266 L616 232 L654 288Z" fill="none" stroke="#E2B95B" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M606 248 L616 232 L626 248" fill="none" stroke="#F6F0E6" stroke-width="4" stroke-linejoin="round"/>
+  <!-- sparkles -->
+  <path d="M420 190l6 14 14 6-14 6-6 14-6-14-14-6 14-6z" fill="#F3D58C" opacity=".7"/>
+  <path d="M780 240l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#F3D58C" opacity=".6"/>
+</svg>

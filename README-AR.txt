@@ -10,14 +10,17 @@
 - assets/main.js ........ القائمة فالموبايل، نسخ الكود، تتبع subid
 - assets/og-image.png ... الصورة اللي كتبان ملي تبارطاجي الرابط
 - sitemap.xml, robots.txt ... للسيو (Google)
-- _redirects ............ الرابط القصير fitshilajitpro.com/go كيدي للإحالة ديالك (Cloudflare)
+- _redirects ............ الرابط القصير fitshilajitpro.com/go/shilajit كيدي للإحالة ديالك (Cloudflare)
 - _headers .............. الكاش ديال الملفات (Cloudflare)
 
-رابط الإحالة المستعمل فكل الأزرار:
-https://naturalshilajit.com/?rfsn=9125072.26616e
+رابط الإحالة (Pure Himalayan Shilajit):
+https://www.purehimalayanshilajit.com/?ref=4878
 
-إلا بدلتي رابط الإحالة: فـ VS Code دير Ctrl+Shift+H (بحث واستبدال فجميع الملفات)
-وبدل الرابط القديم بالجديد.
+جميع الأزرار كيمشيو لـ /go/shilajit. إلا بدلتي رابط الإحالة، بدلو غير فـ _redirects
+(سطر واحد لكل قاعدة) — ما تحتاجش تبدل حتى صفحة.
+
+مكون CTA (assets/style.css): .aff-box (صندوق صغير بعد المقدمة) و .aff-box--lg (صندوق كبير فالأخير).
+الصورة: assets/pure-himalayan-shilajit-cta.webp (المصدر SVG حداها).
 
 النشر على Cloudflare Pages مع GitHub:
 1) صاوب repo جديد فـ GitHub، وطلع فيه هاد الملفات كاملين (المحتوى ديال هاد الدوسي، ماشي الدوسي براسو).
@@ -35,5 +38,5 @@ https://naturalshilajit.com/?rfsn=9125072.26616e
 ومن بعد بدل الرسمة بـ <img src="/assets/اسم-الصورة.jpg" alt="...">.
 
 تتبع الإعلانات (Native Ads):
-زيد ?clickid={click_id} فرابط الإعلان (مثلاً فـ MGID)، والموقع غادي يزيدو أوتوماتيكياً
-لرابط الإحالة كـ subid. تأكد من Refersion واش كيقبل subid.
+مطفي دابا. إلا أكد ليك البرنامج ديال Pure Himalayan Shilajit أنه كيقبل subid،
+بدل AFFILIATE_SUBID_PARAM فـ assets/main.js من null لـ 'subid'.
