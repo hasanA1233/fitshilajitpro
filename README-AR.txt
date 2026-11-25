@@ -20,7 +20,7 @@ https://www.purehimalayanshilajit.com/?ref=4878
 (سطر واحد لكل قاعدة) — ما تحتاجش تبدل حتى صفحة.
 
 مكون CTA (assets/style.css): .aff-box (صندوق صغير بعد المقدمة) و .aff-box--lg (صندوق كبير فالأخير).
-الصورة: assets/pure-himalayan-shilajit-cta.webp (المصدر SVG حداها).
+صور المنتج (من برنامج الأفلييت): assets/img/photos/ (الأصل فـ original/).
 
 النشر على Cloudflare Pages مع GitHub:
 1) صاوب repo جديد فـ GitHub، وطلع فيه هاد الملفات كاملين (المحتوى ديال هاد الدوسي، ماشي الدوسي براسو).

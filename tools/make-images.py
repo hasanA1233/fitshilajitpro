@@ -103,19 +103,4 @@ for slug, d in ICONS.items():
         '</svg>'))
 
 
-# ---------- CTA banner (same filename the CTA box already uses) ----------
-write('pure-himalayan-shilajit-cta', (
-    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">{defs(1200, 500)}'
-    f'<rect width="1200" height="500" fill="url(#sky)"/>'
-    f'<circle cx="600" cy="280" r="240" fill="url(#sun)"/>'
-    + ranges(1200, 500, 80) +
-    '<ellipse cx="600" cy="452" rx="150" ry="14" fill="#1C1A17" opacity=".18"/>'
-    f'<rect x="510" y="110" width="180" height="54" rx="14" fill="{INK}"/>'
-    f'<rect x="524" y="124" width="152" height="5" rx="2.5" fill="{GOLD}" opacity=".7"/>'
-    f'<rect x="484" y="168" width="232" height="280" rx="40" fill="#FFFFFF" stroke="{INK}" stroke-width="3"/>'
-    f'<path d="M500 330c34-22 70 14 106-4s64-22 94-6v84a26 26 0 0 1-26 26H526a26 26 0 0 1-26-26z" fill="url(#resin)"/>'
-    f'<rect x="526" y="206" width="148" height="92" rx="12" fill="{BG}" stroke="{BORDER}" stroke-width="2"/>'
-    f'<path d="M548 280 L578 242 L594 262 L614 230 L652 280Z" fill="none" stroke="{GOLD_D}" stroke-width="4" stroke-linejoin="round"/>'
-    '</svg>'))
-
 print('SVG sources written to', SRC)

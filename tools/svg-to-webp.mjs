@@ -11,10 +11,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const src = join(root, 'assets/img/src');
 const out = join(root, 'assets/img');
 
-// The CTA banner keeps its original path (already referenced by every CTA box).
-const special = { 'pure-himalayan-shilajit-cta': join(root, 'assets') };
+const special = {};
 // Extra smaller widths for responsive srcset.
-const extraWidths = { 'hero-mountains': [800], 'resin-drop': [480], 'pure-himalayan-shilajit-cta': [600] };
+const extraWidths = { 'hero-mountains': [800], 'resin-drop': [480] };
 const THUMB_SMALL = 400; // every thumb-*.svg also gets a 400px version
 
 for (const f of readdirSync(src).filter((n) => n.endsWith('.svg'))) {
