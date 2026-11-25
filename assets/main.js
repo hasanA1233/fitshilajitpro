@@ -10,17 +10,51 @@ var AFFILIATE_URL = '/go/shilajit';
 var AFFILIATE_SUBID_PARAM = null;
 
 (function () {
-  // Mobile menu
-  var btn = document.querySelector('.menu-btn');
-  var links = document.querySelector('.nav-links');
-  if (btn && links) {
-    btn.addEventListener('click', function () {
-      var open = links.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  // ----- Mobile slide-out menu -----
+  var openBtn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('site-nav');
+  var backdrop = document.querySelector('.nav-backdrop');
+  var closeBtn = nav ? nav.querySelector('.nav-close') : null;
+  var mobile = window.matchMedia('(max-width: 899px)');
+
+  function focusables() {
+    return nav.querySelectorAll('a[href], button:not([disabled])');
+  }
+  function setOpen(open) {
+    nav.classList.toggle('is-open', open);
+    if (backdrop) backdrop.classList.toggle('is-open', open);
+    document.body.classList.toggle('nav-open', open);
+    openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+      nav.setAttribute('role', 'dialog');
+      nav.setAttribute('aria-modal', 'true');
+      (closeBtn || focusables()[0]).focus();
+    } else {
+      nav.removeAttribute('role');
+      nav.removeAttribute('aria-modal');
+    }
+  }
+  if (openBtn && nav) {
+    openBtn.addEventListener('click', function () { setOpen(true); });
+    if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); openBtn.focus(); });
+    if (backdrop) backdrop.addEventListener('click', function () { setOpen(false); });
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a') && mobile.matches) setOpen(false);
     });
+    document.addEventListener('keydown', function (e) {
+      if (!nav.classList.contains('is-open')) return;
+      if (e.key === 'Escape') { setOpen(false); openBtn.focus(); return; }
+      if (e.key === 'Tab') {
+        var f = focusables(), first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    var onChange = function () { if (!mobile.matches && nav.classList.contains('is-open')) setOpen(false); };
+    if (mobile.addEventListener) mobile.addEventListener('change', onChange);
   }
 
-  // Keep every affiliate link on the central redirect
+  // ----- Keep every affiliate link on the central redirect -----
   document.querySelectorAll('a[data-aff]').forEach(function (a) {
     a.setAttribute('href', AFFILIATE_URL);
   });
@@ -40,27 +74,7 @@ var AFFILIATE_SUBID_PARAM = null;
     } catch (e) {}
   }
 
-  // Closable sticky CTA on mobile (stays closed for the rest of the visit)
-  var bar = document.getElementById('sticky-cta');
-  if (bar) {
-    var closed = false;
-    try { closed = sessionStorage.getItem('stickyCtaClosed') === '1'; } catch (e) {}
-    if (closed) {
-      bar.hidden = true;
-    } else {
-      document.body.classList.add('has-sticky');
-    }
-    var close = bar.querySelector('.sticky-cta__close');
-    if (close) {
-      close.addEventListener('click', function () {
-        bar.hidden = true;
-        document.body.classList.remove('has-sticky');
-        try { sessionStorage.setItem('stickyCtaClosed', '1'); } catch (e) {}
-      });
-    }
-  }
-
-  // Footer year
+  // ----- Footer year -----
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();

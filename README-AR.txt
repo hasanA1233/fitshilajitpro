@@ -40,3 +40,13 @@ https://www.purehimalayanshilajit.com/?ref=4878
 تتبع الإعلانات (Native Ads):
 مطفي دابا. إلا أكد ليك البرنامج ديال Pure Himalayan Shilajit أنه كيقبل subid،
 بدل AFFILIATE_SUBID_PARAM فـ assets/main.js من null لـ 'subid'.
+
+التصميم (Himalayan Premium):
+- assets/styles.css ...... ملف CSS واحد (الألوان فـ :root)
+- assets/fonts/ .......... الخطوط (Cormorant Garamond + Inter) محليين
+- assets/img/ ............ الصور WebP (المصدر SVG فـ assets/img/src/)
+- الهيدر والفوتر والـ top bar كاينين فبلاصة وحدة: tools/sync-layout.py
+  بدل فيه اللي بغيتي ومن بعد دير:  python3 tools/sync-layout.py
+  (كيبدل غير البلوكات بين <!-- layout:... --> فكل الصفحات)
+- الصور: python3 tools/make-images.py  ومن بعد  node tools/svg-to-webp.mjs  (خاص sharp)
+- فالصفحة الرئيسية، قسم المراجعة (#review) فيه TODO مخبي: زيد تجربتك الشخصية.
